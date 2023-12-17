@@ -2,7 +2,7 @@ import { FcLike } from "react-icons/fc";
 import { IoCart } from "react-icons/io5";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useState } from "react";
-
+import logo from "../assets/logo.png"
 export default function Header() {
     const [selectedLink, setSelectedLink] = useState(null);
 
@@ -10,6 +10,8 @@ export default function Header() {
         setSelectedLink(index);
 
         const targetElement = document.querySelector(href);
+        console.log(index.href)
+        
         if (targetElement) {
             const offsetTop = targetElement.offsetTop;
             window.scrollTo({
@@ -33,12 +35,12 @@ export default function Header() {
             <div className="lg:max-w-[1600px] my-5 flex align-middle mx-auto justify-evenly flex-wrap flex-row items-center font-semibold">
 
                 <div className="flex flex-row items-center flex-wrap space-x-10">
-                    <a href="/" className="w-28 text-center">YOUR LOGO HERE</a>
+                    <a href="/" className="w-28 text-center text-2xl"><img src={logo} /></a>
 
                     {links.map((link, index) => (
                         <a
                             key={index}
-                            href={index.href}
+                            href={link.href}
                             className={`${selectedLink === index ? "text-blue-400 underline" : "hover:underline hover:text-blue-800"} && cursor-pointer`}
                             onClick={() => handleLinkClick(index)}
                         >

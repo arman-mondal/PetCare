@@ -1,12 +1,14 @@
 import './about.css';
 import { AiFillRightCircle } from 'react-icons/ai';
+import dog from "../assets/dog.jpg"
+
 
 export default function About() {
     return (
         <>
             <div className="lg:max-w-[1600px] lg:py-20 lg:px-16 flex flex-row mx-auto justify-center space-x-20">
                 <div className="xs:hidden w-1/2 flex justify-end">
-                    <img src="https://via.placeholder.com/250x250" alt="https://via.placeholder.com/250x250" />
+                    <img src={dog} alt={dog} />
                 </div>
                 <div className="flex flex-col text-left w-1/2 space-y-5">
                     <h1 className="text-5xl font-extrabold dark-blue-text">About Us</h1>
